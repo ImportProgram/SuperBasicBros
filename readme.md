@@ -11,7 +11,7 @@ Super Basic Bros was a project for a sophmore high school class (2015-2016 i thi
 
 Load the `SuperBasicBrows.sln` into Visual Studio (any version). 
 
-> Visual Studio 2022 for example asks to update from 4.5 to 4.8, which is recommend. Then run said solution!
+> Visual Studio 2022 for example asks to update from 4.5 to 4.8, which is recommended. Then run said solution!
 
 ## Bugs (which will not be fixed)
 - Pressing space bar when dying with duplicate game assets.
