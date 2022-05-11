@@ -1,0 +1,7 @@
+!SuperBasicBros/bin/
+
+SuperBasicBros/bin/*
+!SuperBasicBros/bin/Debug/
+
+SuperBasicBros/bin/Debug/*
+!SuperBasicBros/bin/Debug/Sounds

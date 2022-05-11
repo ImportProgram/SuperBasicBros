@@ -1,0 +1,561 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DB028481-A589-4E3E-BB19-6CDA43F9BD8F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>MarioBros.My.MyApplication</StartupObject>
+    <RootNamespace>MarioBros</RootNamespace>
+    <AssemblyName>MarioBros</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>MarioBros.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>MarioBros.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Blocks.vb" />
+    <Compile Include="Ai.vb" />
+    <Compile Include="Entity.vb" />
+    <Compile Include="Game.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Game.Designer.vb">
+      <DependentUpon>Game.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultiSounds.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Pipes.vb" />
+    <Compile Include="UUID.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Game.resx">
+      <DependentUpon>Game.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\1up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1upMushroom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1upMushroomDark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\100pts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\200pts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\400pts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\500pts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\800pts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1000pts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2000pts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4000pts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5000pts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8000pts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AfterBowserDead1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AfterBowserDead2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AfterBowserDead3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AfterBowserDead4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AfterBowserDead5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AfterBowserDead6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AfterBowserDead7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AfterBowserDead8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Axe.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bloober.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bowser.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BrickBlockBrown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BrickBlockCastle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BrickBlockDark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BulletBill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BulletBillGrey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BuzzyBeetle.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BuzzyBeetleDark.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BuzzyBeetleGrey.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BuzzyBeetleShell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BuzzyBeetleShellDark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BuzzyBeetleShellGrey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cannon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CannonLarge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CannonSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheepCheepGrey.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheepCheepRed.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CoinForBlackBG.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CoinForBlueBG.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CoinForWater.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EmptyBlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EmptyBlockCastle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EmptyBlockDark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EmptyBlockGrey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FieryMario.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FieryMarioCrouching.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FieryMarioJumping.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FieryMarioSkidding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FieryMarioStanding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FieryMarioStandingLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FireBall.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FireBallHit.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FireFlower.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlagFromPole.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlagFromPolePink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hammer.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HammerGrey.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InvincibleFieryMario.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KoopaParatroopaGreen.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KoopaParatroopaGreenDark.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KoopaParatroopaRed.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KoopaTroopaGreen.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KoopaTroopaGreenDark.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KoopaTroopaRed.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KoopaTroopaShellGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KoopaTroopaShellGreenDark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KoopaTroopaShellRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lakitu.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LittleGoomba.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LittleGoombaDark.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LittleGoombaGrey.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Luigi.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LuigiJumping.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LuigiSkidding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LuigiStanding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MagicMushroom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mario.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MarioSkidding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MarioStanding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MarioStandingLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MedPipe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MushroomRetainer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PiranaPlant.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PiranaPlantDark.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Podoboo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Princess.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QuestionBlock.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QuestionBlockCastle.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QuestionBlockDark.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SmallPipe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SpinningFireBalls.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spiny.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SpinysEggs.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Starman.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SuperLuigi.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SuperLuigiCrouching.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SuperLuigiJumping.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SuperLuigiSkidding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SuperLuigiStanding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SuperMario.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\supermariobrosbackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SuperMarioCrouching.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SuperMarioJumping.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SuperMarioSkidding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SuperMarioStanding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SuperMarioStandingLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TheHammerBrothers.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TheHammerBrothersDark.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TheHammerBrothersWithHammer.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trans.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MarioJumping.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MarioJumpingLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SuperMarioJumpingLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FieryMarioJumpingLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SuperMarioLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FieryMarioLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MarioLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pipe_large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pipe_med.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pipe_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MediaPlayer">
+      <Guid>{22D6F304-B0F6-11D0-94AB-0080C74C7E95}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu_background.png" />
+    <None Include="Resources\MagicMushroomSelector.png" />
+    <None Include="Resources\1upMushroomSelector.png" />
+    <None Include="Resources\black.png" />
+    <None Include="Resources\space_close.png" />
+    <None Include="Resources\game_over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StairsBlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\options_dialog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu_dialog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level-1-noblocks.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
